@@ -12,7 +12,7 @@ class UserEntity {
   String? nickName;
 
   /// 头像
-  String? faceUrl;
+  String? faceURL;
 
   /// 签名
   String? selfSignature;
@@ -37,7 +37,7 @@ class UserEntity {
 
   UserEntity({
     this.nickName,
-    this.faceUrl,
+    this.faceURL,
     this.selfSignature,
     this.gender,
     this.role,
@@ -50,7 +50,7 @@ class UserEntity {
     Map<String, dynamic> json = data is Map ? data.cast<String, dynamic>() : jsonDecode(data);
     if (json['userID'] != null) userID = json['userID'];
     if (json['nickName'] != null) nickName = json['nickName'];
-    if (json['faceUrl'] != null) faceUrl = json['faceUrl'];
+    if (json['faceURL'] != null) faceURL = json['faceURL'];
     if (json['selfSignature'] != null) selfSignature = json['selfSignature'];
     if (json['gender'] != null) gender = UserGenderTool.getByInt(json['gender']);
     if (json['role'] != null) role = json['role'];
@@ -63,7 +63,7 @@ class UserEntity {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     if (this.nickName != null) data['nickName'] = this.nickName;
-    if (this.faceUrl != null) data['faceUrl'] = this.faceUrl;
+    if (this.faceURL != null) data['faceURL'] = this.faceURL;
     if (this.selfSignature != null) data['selfSignature'] = this.selfSignature;
     if (this.gender != null) data['gender'] = UserGenderTool.toInt(this.gender!);
     if (this.role != null) data['role'] = this.role;
